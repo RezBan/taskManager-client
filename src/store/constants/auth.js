@@ -1,0 +1,5 @@
+export default {
+  POST:         'AUTH_POST',
+  POST_SUCCESS: 'AUTH_POST_SUCCESS',
+  POST_FAILURE: 'AUTH_POST_FAILURE',
+}

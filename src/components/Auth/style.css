@@ -1,0 +1,17 @@
+.link {
+  cursor: pointer;
+}
+
+.login-form {
+  width: 350px;
+  margin: auto;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.selector {
+  text-align: center;
+  margin-left: 15rem !important;
+  margin-top: 5rem !important
+}

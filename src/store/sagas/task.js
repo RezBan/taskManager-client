@@ -13,11 +13,12 @@ function* get(data) {
     const response = yield axios.get(
       `http://localhost:8000/task`,
       {
-        params: {owner: data.payload}
+        params: {user: data.payload}
       }
     )
     if (_.size(response)) {
-      yield put({ type: types.GET_SUCCESS, payload: response.data})
+      const tasks = _.filter(response.data, { user:{id: `${data.payload}` }})
+      yield put({ type: types.GET_SUCCESS, payload: tasks})
     }
   } catch (e) {
     yield put(taskActions.getFailure(e))
@@ -64,7 +65,6 @@ function* getId(data) {
 }
 
 function* post(data) {
-  console.log(data.payload)
   try {
     const response = yield axios.post(
       `http://localhost:8000/task/`,

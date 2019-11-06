@@ -45,7 +45,7 @@ class TaskList extends Component {
     return (
       <Fragment>
         <Header />
-        {_.isNil(tasks)
+        {_.size(tasks) === 0
           ?
             <div>
               <center>

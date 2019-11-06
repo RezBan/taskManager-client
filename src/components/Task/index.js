@@ -134,10 +134,18 @@ class TaskContainer extends Component {
 
     if (this.isValid(task)) {
       const taskData = {
-        owner: userId,
+        user: userId,
         ...task
       }
       taskActions.post({ ...taskData })
+      this.setState({ task: {
+        taskName: '',
+        priority: 0,
+        status: 0,
+        plainTime: '',
+        spendTime: '',
+        description: '',
+      }})
     }
   }
 
@@ -149,7 +157,7 @@ class TaskContainer extends Component {
       if (this.isValid(task)) {
         const taskData = {
           taskId,
-          owner: userId,
+          user: userId,
           ...task
         }
         taskActions.update({ ...taskData })

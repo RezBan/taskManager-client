@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import { Link } from 'react-router-dom'
+
 import { taskPriority, taskStatus } from '../../../helpers/constants'
 
 function ShortList({ tasks, status, priority, sortBy }) {
@@ -12,34 +13,34 @@ function ShortList({ tasks, status, priority, sortBy }) {
             <td>Task name</td>
             <td>
               Priority
-                <span 
-                  className="ml-1 link" 
-                  onClick={()=>sortBy('priority')}
-                >
-                  {priority
-                    ? <span>
-                        &uarr;
-                      </span> 
-                    : <span>
-                        &darr;
+                <span
+                className="ml-1 link"
+                onClick={() => sortBy('priority')}
+              >
+                {priority
+                  ? <span>
+                    &uarr;
+                      </span>
+                  : <span>
+                    &darr;
                     </span>
-                  }
+                }
               </span>
             </td>
             <td>
               Status
-              <span 
-                  className="ml-1 link" 
-                  onClick={()=>sortBy('status')}
-                >
-                  {status
-                    ? <span>
-                        &uarr;
-                      </span> 
-                    : <span>
-                        &darr;
+              <span
+                className="ml-1 link"
+                onClick={() => sortBy('status')}
+              >
+                {status
+                  ? <span>
+                    &uarr;
+                      </span>
+                  : <span>
+                    &darr;
                     </span>
-                  }
+                }
               </span>
             </td>
           </tr>
@@ -51,7 +52,7 @@ function ShortList({ tasks, status, priority, sortBy }) {
                 <td>
                   <Link to={`/task/${item.id}`}>
                     {item.taskName}
-                 </Link> 
+                  </Link>
                 </td>
                 <td>{taskPriority[item.priority].name}</td>
                 <td>{taskStatus[item.status].name}</td>

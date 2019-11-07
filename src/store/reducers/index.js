@@ -4,7 +4,7 @@ import userRedusers from './user'
 import taskRedusers from './task'
 import { routerReducer } from 'react-router-redux'
 
-const allReducers = combineReducers ({
+const allReducers = combineReducers({
   routing: routerReducer,
   auth: authRedusers,
   user: userRedusers,

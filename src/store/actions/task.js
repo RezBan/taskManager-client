@@ -9,9 +9,9 @@ export const get = (data) => {
 
 export const getSuccess = ({ data }) => (
   {
-  type: types.GET_SUCCESS,
-  payload: data,
-})
+    type: types.GET_SUCCESS,
+    payload: data,
+  })
 
 export const getFailure = error => ({
   type: types.GET_FAILURE,
@@ -27,9 +27,9 @@ export const getId = (data) => {
 
 export const getIdSuccess = ({ data }) => (
   {
-  type: types.GET_ID_SUCCESS,
-  payload: data,
-})
+    type: types.GET_ID_SUCCESS,
+    payload: data,
+  })
 
 export const getIdFailure = error => ({
   type: types.GET_ID_FAILURE,
@@ -45,9 +45,9 @@ export const post = (data) => {
 
 export const postSuccess = ({ data }) => (
   {
-  type: types.POST_SUCCESS,
-  payload: data,
-})
+    type: types.POST_SUCCESS,
+    payload: data,
+  })
 
 export const postFailure = error => ({
   type: types.POST_FAILURE,
@@ -63,9 +63,9 @@ export const update = (data) => {
 
 export const updateSuccess = ({ data }) => (
   {
-  type: types.UPDATE_SUCCESS,
-  payload: data,
-})
+    type: types.UPDATE_SUCCESS,
+    payload: data,
+  })
 
 export const updateFailure = error => ({
   type: types.UPDATE_FAILURE,

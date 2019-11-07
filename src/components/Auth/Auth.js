@@ -1,13 +1,13 @@
 import React from 'react'
 import './style.css'
 
-function Auth({ 
-  state, 
-  handleChange, 
+function Auth({
+  state,
+  handleChange,
   toggleLogin,
   signIn,
   signUp
- }) {
+}) {
   return (
     <div className="container">
       <div className="selector">
@@ -21,33 +21,33 @@ function Auth({
         <div>
           <div className="form-group">
             <label htmlFor="emailInput">Email address</label>
-            <input 
-              type="email" 
-              className="form-control text-center" 
-              id="emailInput" 
-              placeholder="Enter email" 
+            <input
+              type="email"
+              className="form-control text-center"
+              id="emailInput"
+              placeholder="Enter email"
               value={state.email}
               onChange={e => handleChange(e, 'email')}
             />
           </div>
           <div className="form-group">
             <label htmlFor="passwordInput">Password</label>
-            <input 
-              type="password" 
-              className="form-control text-center" 
-              id="passwordInput" 
-              placeholder="Password" 
+            <input
+              type="password"
+              className="form-control text-center"
+              id="passwordInput"
+              placeholder="Password"
               value={state.password}
               onChange={e => handleChange(e, 'password')}
             />
           </div>
           <div className="text-center">
-            <button 
-                className="btn btn-primary"
-              >
+            <button
+              className="btn btn-primary"
+            >
               {state.isLogin
-                ? <span onClick={()=>signIn()}>Sign In</span>
-                : <span onClick={()=>signUp()}>Sign Up</span>
+                ? <span onClick={() => signIn()}>Sign In</span>
+                : <span onClick={() => signUp()}>Sign Up</span>
               }
             </button>
           </div>

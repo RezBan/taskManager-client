@@ -15,7 +15,7 @@ function* post(data) {
       data.payload
     )
     if (_.size(response)) {
-      yield put({ type: types.POST_SUCCESS, payload: response.data})
+      yield put({ type: types.POST_SUCCESS, payload: response.data })
       let notice = PNotify.success({
         title: 'Congratulations!',
         text: `New user was added.\n Tip: now you can sign in.`,
@@ -26,7 +26,7 @@ function* post(data) {
           }
         }
       })
-      notice.on('click', function() {
+      notice.on('click', function () {
         notice.close()
       })
     }
@@ -42,7 +42,7 @@ function* post(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }

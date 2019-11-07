@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Auth from '../../components/Auth'
- 
+
 class Notlogged extends Component {
 
   render() {

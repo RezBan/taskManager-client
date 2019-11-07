@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+
 import TaskList from './TaskList'
 import * as taskActions from '../../store/actions/task'
 import PNotify from 'pnotify/dist/es/PNotify'
@@ -20,10 +21,10 @@ class TaskListContainer extends Component {
     const id = localStorage.getItem('id')
     taskActions.get(id)
   }
-  
+
   render() {
     return (
-      <TaskList 
+      <TaskList
         {...this.props}
       />
     )

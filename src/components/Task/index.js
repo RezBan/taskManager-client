@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import _ from 'lodash'
+
 import Task from './Task'
 import * as taskActions from '../../store/actions/task'
 import { fieldNames } from '../../helpers/constants'
@@ -45,19 +46,19 @@ class TaskContainer extends Component {
       changedValue = 0
       return changedValue
     }
-    const task = {...this.state.task}
+    const task = { ...this.state.task }
     task[name] = changedValue
     this.setState({ task })
   }
 
   handleChange = (e, name) => {
-    const task = {...this.state.task}
+    const task = { ...this.state.task }
     task[name] = e.target.value
     this.setState({ task })
   }
 
   handleSelect = (value, name) => {
-    const task = {...this.state.task}
+    const task = { ...this.state.task }
     task[name] = value
     this.setState({ task })
   }
@@ -83,7 +84,7 @@ class TaskContainer extends Component {
             }
           }
         })
-        notice.on('click', function() {
+        notice.on('click', function () {
           notice.close()
         })
         result = false
@@ -102,7 +103,7 @@ class TaskContainer extends Component {
           }
         }
       })
-      notice.on('click', function() {
+      notice.on('click', function () {
         notice.close()
       })
       result = false
@@ -118,7 +119,7 @@ class TaskContainer extends Component {
           }
         }
       })
-      notice.on('click', function() {
+      notice.on('click', function () {
         notice.close()
       })
       result = false
@@ -138,37 +139,39 @@ class TaskContainer extends Component {
         ...task
       }
       taskActions.post({ ...taskData })
-      this.setState({ task: {
-        taskName: '',
-        priority: 0,
-        status: 0,
-        plainTime: '',
-        spendTime: '',
-        description: '',
-      }})
+      this.setState({
+        task: {
+          taskName: '',
+          priority: 0,
+          status: 0,
+          plainTime: '',
+          spendTime: '',
+          description: '',
+        }
+      })
     }
   }
 
-    updatePayment = () => {
-      const { taskActions } = this.props
-      const { task } = this.state
-      const userId = localStorage.getItem('id')
-      const taskId = this.props.task.id
-      if (this.isValid(task)) {
-        const taskData = {
-          taskId,
-          user: userId,
-          ...task
-        }
-        taskActions.update({ ...taskData })
+  updatePayment = () => {
+    const { taskActions } = this.props
+    const { task } = this.state
+    const userId = localStorage.getItem('id')
+    const taskId = this.props.task.id
+    if (this.isValid(task)) {
+      const taskData = {
+        taskId,
+        user: userId,
+        ...task
       }
+      taskActions.update({ ...taskData })
     }
-  
+  }
+
   render() {
     const id = window.location.pathname.substring(6) || ''
     const task = id && this.state.isShow ? this.props.task : this.state.task
     return (
-      <Task 
+      <Task
         task={task || this.state.task}
         handleChange={this.handleChange}
         handleChangeNumber={this.handleChangeNumber}

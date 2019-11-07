@@ -6,11 +6,11 @@ export const taskPriority = [
   {
     name: 'Middle',
     value: 1
-  },  
+  },
   {
     name: 'Hight',
     value: 2
-  },  
+  },
   {
     name: 'Epic',
     value: 3
@@ -25,11 +25,11 @@ export const taskStatus = [
   {
     name: 'In progress',
     value: 1
-  },  
+  },
   {
     name: 'Done',
     value: 2
-  },  
+  },
 ]
 
 export const fieldNames = [

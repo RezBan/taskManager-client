@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import _ from 'lodash'
+
 import Header from '../Header'
 import './style.css'
 import ShortList from './ShortList'
@@ -17,14 +18,14 @@ class TaskList extends Component {
   }
 
   renderDataTable = (tasks) => {
-    switch(this.state.view) {
+    switch (this.state.view) {
       case 'detailed': {
-        return <DetailedList 
+        return <DetailedList
           tasks={tasks}
         />
       }
       case 'scrum': {
-        return <ScrumBoard 
+        return <ScrumBoard
           tasks={tasks}
         />
       }
@@ -37,53 +38,53 @@ class TaskList extends Component {
   }
 
   changeView = (viewType) => {
-    this.setState({view: viewType})
+    this.setState({ view: viewType })
   }
 
-  render () {
+  render() {
     const { tasks } = this.props
     return (
       <Fragment>
         <Header />
         {_.size(tasks) === 0
           ?
-            <div>
-              <center>
-                <span>
-                  There is no tasks, yet!
+          <div>
+            <center>
+              <span>
+                There is no tasks, yet!
                 </span>
-              </center>
-            </div>
+            </center>
+          </div>
           :
-            <div>
-              <div className="ml-3 mt-3">
-                <span
-                  className="mr-1"
-                >
-                  Select view:
+          <div>
+            <div className="ml-3 mt-3">
+              <span
+                className="mr-1"
+              >
+                Select view:
                 </span>
-                <span
-                  className="link mr-1"
-                  onClick={()=>{this.changeView('short')}}
-                >
-                  Short List |
+              <span
+                className="link mr-1"
+                onClick={() => { this.changeView('short') }}
+              >
+                Short List |
                 </span>
-                <span
-                  className="link mr-1"
-                  onClick={()=>{this.changeView('detailed')}}
-                >
-                  Detailed List |
+              <span
+                className="link mr-1"
+                onClick={() => { this.changeView('detailed') }}
+              >
+                Detailed List |
                 </span>
-                <span
-                  className="link"
-                  onClick={()=>{this.changeView('scrum')}}
-                >
-                  Scrum Board
+              <span
+                className="link"
+                onClick={() => { this.changeView('scrum') }}
+              >
+                Scrum Board
                 </span>
-              </div>
-
-              {this.renderDataTable(tasks)}
             </div>
+
+            {this.renderDataTable(tasks)}
+          </div>
         }
         <center>
           <div>

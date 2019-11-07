@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import { Link } from 'react-router-dom'
+
 import MaskedView from '../../ui/MaskedView'
 import { taskPriority, taskStatus } from '../../../helpers/constants'
 
@@ -13,34 +14,34 @@ function DetailedList({ tasks, priority, status, sortBy }) {
             <td>Task Name</td>
             <td>
               Priority
-                <span 
-                  className="ml-1 link" 
-                  onClick={()=>sortBy('priority')}
-                >
-                  {priority
-                    ? <span>
-                        &uarr;
-                      </span> 
-                    : <span>
-                        &darr;
+                <span
+                className="ml-1 link"
+                onClick={() => sortBy('priority')}
+              >
+                {priority
+                  ? <span>
+                    &uarr;
+                      </span>
+                  : <span>
+                    &darr;
                     </span>
-                  }
+                }
               </span>
             </td>
             <td>
               Status
-              <span 
-                  className="ml-1 link" 
-                  onClick={()=>sortBy('status')}
-                >
-                  {status
-                    ? <span>
-                        &uarr;
-                      </span> 
-                    : <span>
-                        &darr;
+              <span
+                className="ml-1 link"
+                onClick={() => sortBy('status')}
+              >
+                {status
+                  ? <span>
+                    &uarr;
+                      </span>
+                  : <span>
+                    &darr;
                     </span>
-                  }
+                }
               </span>
             </td>
             <td>Plain time</td>
@@ -48,7 +49,7 @@ function DetailedList({ tasks, priority, status, sortBy }) {
           </tr>
         </thead>
         <tbody>
-          {!_.isNil(tasks) 
+          {!_.isNil(tasks)
             ? _.map(tasks, item => {
               return (
                 <tr key={`task_${item.id}`}>
@@ -65,9 +66,9 @@ function DetailedList({ tasks, priority, status, sortBy }) {
               )
             })
             : <tr>
-                <td>
-                  <span>There is no tasks, yet</span>
-                </td>
+              <td>
+                <span>There is no tasks, yet</span>
+              </td>
             </tr>
           }
         </tbody>

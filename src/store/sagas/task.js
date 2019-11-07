@@ -13,12 +13,12 @@ function* get(data) {
     const response = yield axios.get(
       `http://localhost:8000/task`,
       {
-        params: {user: data.payload}
+        params: { user: data.payload }
       }
     )
     if (_.size(response)) {
-      const tasks = _.filter(response.data, { user:{id: `${data.payload}` }})
-      yield put({ type: types.GET_SUCCESS, payload: tasks})
+      const tasks = _.filter(response.data, { user: { id: `${data.payload}` } })
+      yield put({ type: types.GET_SUCCESS, payload: tasks })
     }
   } catch (e) {
     yield put(taskActions.getFailure(e))
@@ -32,7 +32,7 @@ function* get(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }
@@ -44,7 +44,7 @@ function* getId(data) {
       `http://localhost:8000/task/${data.payload}`,
     )
     if (_.size(response)) {
-      yield put({ type: types.GET_ID_SUCCESS, payload: response.data})
+      yield put({ type: types.GET_ID_SUCCESS, payload: response.data })
     }
   } catch (e) {
     yield put(taskActions.getIdFailure(e))
@@ -58,7 +58,7 @@ function* getId(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }
@@ -71,7 +71,7 @@ function* post(data) {
       data.payload
     )
     if (_.size(response)) {
-      yield put({ type: types.POST_SUCCESS, payload: response.data})
+      yield put({ type: types.POST_SUCCESS, payload: response.data })
       let notice = PNotify.success({
         title: 'Congratulations!',
         text: 'New task was saved.\nTip: You can create new task or go back to Task list.',
@@ -82,7 +82,7 @@ function* post(data) {
           }
         }
       })
-      notice.on('click', function() {
+      notice.on('click', function () {
         notice.close()
       })
     }
@@ -98,7 +98,7 @@ function* post(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }
@@ -111,7 +111,7 @@ function* update(data) {
       data.payload
     )
     if (_.size(response)) {
-      yield put({ type: types.UPDATE_SUCCESS, payload: response.data})
+      yield put({ type: types.UPDATE_SUCCESS, payload: response.data })
       let notice = PNotify.success({
         title: 'Congratulations!',
         text: 'This task was updated.\nTip: You can update it again or go back to Task list.',
@@ -122,7 +122,7 @@ function* update(data) {
           }
         }
       })
-      notice.on('click', function() {
+      notice.on('click', function () {
         notice.close()
       })
     }
@@ -138,7 +138,7 @@ function* update(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }

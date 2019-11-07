@@ -15,7 +15,7 @@ function* post(data) {
       data.payload
     )
     if (_.size(response)) {
-      yield put({ type: types.POST_SUCCESS, payload: response.data})
+      yield put({ type: types.POST_SUCCESS, payload: response.data })
     }
     localStorage.setItem('token', response.data.token)
     localStorage.setItem('id', response.data.userId)
@@ -32,7 +32,7 @@ function* post(data) {
         }
       }
     })
-    notice.on('click', function() {
+    notice.on('click', function () {
       notice.close()
     })
   }

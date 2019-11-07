@@ -3,16 +3,16 @@ import _ from 'lodash'
 
 class Select extends Component {
   renderOptions = (items) => {
-    const {handleSelect, name} = this.props
+    const { handleSelect, name } = this.props
     const options = _.map(items, item => {
       return (
         <option
           key={`id_for_${item.name}`}
           value={item.value}
-          onClick={()=>handleSelect(item.value, name)}
+          onClick={() => handleSelect(item.value, name)}
         >
           {item.name}
-        </option> 
+        </option>
       )
     })
     return options
@@ -21,7 +21,7 @@ class Select extends Component {
   render() {
     const { items, readOnly } = this.props
     return (
-      <select 
+      <select
         className="form-control"
         disabled={readOnly}
       >

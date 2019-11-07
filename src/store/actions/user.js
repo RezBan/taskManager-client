@@ -9,9 +9,9 @@ export const post = (data) => {
 
 export const postSuccess = ({ data }) => (
   {
-  type: types.POST_SUCCESS,
-  payload: data,
-})
+    type: types.POST_SUCCESS,
+    payload: data,
+  })
 
 export const postFailure = error => ({
   type: types.POST_FAILURE,

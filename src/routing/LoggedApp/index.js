@@ -9,7 +9,6 @@ import TaskList from '../../components/TaskList'
 import Task from '../../components/Task'
 
 class LoggedApp extends Component {
-
   render() {
     return (
       <Switch>
